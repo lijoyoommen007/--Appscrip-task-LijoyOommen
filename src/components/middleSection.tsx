@@ -34,19 +34,21 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
   const sortCriteria = useSelector((state: any) => state.filters.sortCriteria);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   const handleResize = debounce(() => {
-  //     setIsOpen(window.innerWidth >= 768);
-  //   }, 200); // Adjust the delay as needed
-  
-  //   handleResize();
-  
-  //   window.addEventListener('resize', handleResize);
-  
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const handleResize = debounce(() => {
+      if (window.innerWidth >= 768) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+      }
+    }, 200); // Adjust the delay as needed
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const toggleSidebar = () => { 
     setIsOpen(!isOpen);
