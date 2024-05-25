@@ -35,13 +35,13 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleResize = debounce(() => {
+    const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsOpen(true);
       } else {
         setIsOpen(false);
       }
-    }, 200); // Adjust the delay as needed
+    };
 
     window.addEventListener('resize', handleResize);
 
