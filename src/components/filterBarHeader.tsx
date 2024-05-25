@@ -47,7 +47,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ isOpen, toggleSidebar }) => {
                     </button>
                 </div>
             </div>
-            <span className="md:hidden block pl-16"> |</span>
+            <span className="md:hidden block pl-12"> |</span>
             <div className="flex justify-center items-center">
                 <Dropdown options={filterBarHeader} onSelect={handleSelect} />
             </div>
