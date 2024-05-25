@@ -8,15 +8,13 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, productName }) => {
   return (
-    <div className="z-20 bg-gray-50 hover:bg-gray-100 shadow-md overflow-hidden w-[47%] h-46 md:w-96 md:h-96 flex flex-col mt-8 transform transition-transform duration-300 hover:scale-100">
-      <div className="overflow-hidden">
-        <Image
-          width={300} 
-          height={200} 
-          className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
+    <div className="z-20 bg-gray-50 hover:bg-gray-100 shadow-md overflow-hidden w-[47%] h-48 md:w-96 md:h-96 flex flex-col mt-8 transform transition-transform duration-300 hover:scale-100">
+      <div className="overflow-hidden flex justify-center">
+        <img
+          className="md:h-80 h-30 w-full object-contain transition-transform duration-300 hover:scale-110"
           src={imageSrc}
           alt={productName}
-          priority={true} // Add priority property
+          fetchPriority="high" // Add priority property
         />
       </div>
       <div className="md:p-4 p-0 flex-grow flex flex-col justify-between">
