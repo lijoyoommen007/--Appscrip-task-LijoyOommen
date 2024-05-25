@@ -115,9 +115,7 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
                 <span className="sr-only">Close menu</span>
               </button>
             </div>
-            <div className="">
-              <ul className="space-y-2 font-medium">
-                <li>
+            <div className="space-y-2 font-medium">
                   <CustomDropdown
                     options={filterData}
                     filterKey="category"
@@ -174,9 +172,6 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
                     setFilters={handleFilterChange}
                     heading="PATTERNS"
                   />
-                </li>
-                {/* Add more <li> elements with CustomDropdown components for other filter criteria */}
-              </ul>
             </div>
           </div>
           <div className={`flex-1 p-4 transition-width duration-300 ${isOpen ? 'hidden md:block' : 'block'}`}>
