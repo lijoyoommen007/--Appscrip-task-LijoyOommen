@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilters, setFilteredProducts } from '../redux/slice';
 import FilterBarHeader from './filterBarHeader'; // Assuming FilterBar is a separate component
 const CustomDropdown = dynamic(() => import('./customFilterSelector'));
 
 import ProductCard from "./productCards";
-import { sortProducts } from '@/utils/utils';
+import { sortProducts, useMediaQuery } from '@/utils/utils';
 import debounce from 'lodash.debounce';
 import { filterData } from '@/constants';
 import dynamic from 'next/dynamic';
@@ -27,6 +27,7 @@ interface FilterLayoutProps {
   products: Product[];
 }
 
+
 const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
   const filters = useSelector((state: any) => state.filters.filters);
   const filteredProducts = useSelector((state: any) => state.filters.filteredProducts);
@@ -34,17 +35,7 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
   const sortCriteria = useSelector((state: any) => state.filters.sortCriteria);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    const handleResize = debounce(() => {
-      setIsOpen(window.innerWidth >= 768);
-    }, 200); // Adjust the delay as needed
-  
-    handleResize();
-  
-    window.addEventListener('resize', handleResize);
-  
-    
-  }, []);
+
   const toggleSidebar = () => { 
     setIsOpen(!isOpen);
   };
@@ -71,6 +62,7 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
 
 
   const sortedProducts = sortProducts(filteredProducts, sortCriteria);
+  const isBreakpoint = useMediaQuery(768)
 
   return (
     <>
@@ -79,7 +71,7 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
         <div className="flex">
           <div
             id="drawer-navigation"
-            className={`transition-width duration-300 h-full overflow-y-auto bg-white ${isOpen ? 'md:w-80 w-[100vw]' : 'w-0'}`}
+            className={`transition-width duration-300 h-full overflow-y-auto bg-white ${isOpen||!isBreakpoint ? 'md:w-80 w-[100vw]' : 'w-0'}`}
             aria-labelledby="drawer-navigation-label"
           >
             <div className="flex justify-between items-center p-4">
