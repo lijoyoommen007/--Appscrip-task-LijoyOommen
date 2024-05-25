@@ -45,9 +45,6 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
 
     window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   const toggleSidebar = () => { 
