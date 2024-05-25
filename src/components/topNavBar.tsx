@@ -61,7 +61,7 @@ const Header: React.FC = () => {
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
-          <Image width={0} height={0} loading="lazy" src="/images/logo.svg" alt="" className="w-7 h-7 cursor-pointer" />
+          <Image width={0} height={0} loading="lazy" src="/images/logo.svg" alt="logo" className="w-7 h-7 cursor-pointer" />
         </div>
         <a href="#" className="flex-auto text-center md:ml-48 self-stretch my-auto text-xl md:text-3xl font-extrabold text-black cursor-pointer">LOGO</a>
         <div className="flex gap-5 self-stretch my-auto text-base font-bold text-stone-800">

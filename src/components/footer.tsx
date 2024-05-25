@@ -47,7 +47,7 @@ const ContactInfo: React.FC = () => (
         <h2 className="mt-8 text-lg uppercase max-md:max-w-full">Currency</h2>
 
         <div className="flex gap-1.5 items-center self-start mt-6 tracking-wider whitespace-nowrap">
-            <Image width={0} height={0} loading="lazy" src="/images/USA.svg" alt="" className="shrink-0 self-stretch w-6 aspect-square" />&#11049;
+            <Image width={0} height={0} loading="lazy" src="/images/USA.svg" alt="USALOGO" className="shrink-0 self-stretch w-6 aspect-square" />&#11049;
             <div className="self-stretch my-auto">USD</div>
         </div>
         <p className="mt-5 text-xs max-md:max-w-full md:block hidden">
@@ -105,8 +105,8 @@ const FollowUs: React.FC = () => {
 
 const SocialIcons: React.FC = () => (
     <div className="flex gap-3 self-start pr-2.5 mt-8">
-        <Image width={0} height={0} loading="lazy" src="/images/instagram.svg" alt="Social Icon 1" className="shrink-0 w-8 aspect-square cursor-pointer transition-transform duration-300 hover:scale-110" />
-        <Image width={0} height={0} loading="lazy" src="/images/linkedin.svg" alt="Social Icon 2" className="shrink-0 w-8 aspect-square cursor-pointer transition-transform duration-300 hover:scale-110" />
+        <Image width={0} height={0} loading="lazy" src="/images/Instagram.svg" alt="instagram" className="shrink-0 w-8 aspect-square cursor-pointer transition-transform duration-300 hover:scale-110" />
+        <Image width={0} height={0} loading="lazy" src="/images/linkedin.svg" alt="linkedIn" className="shrink-0 w-8 aspect-square cursor-pointer transition-transform duration-300 hover:scale-110" />
     </div>
 );
 
