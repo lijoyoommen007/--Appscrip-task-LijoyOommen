@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilters, setFilteredProducts } from '../redux/slice';
 import FilterBarHeader from './filterBarHeader'; // Assuming FilterBar is a separate component
@@ -34,27 +34,17 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
   const sortCriteria = useSelector((state: any) => state.filters.sortCriteria);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleResize = useCallback(debounce(() => {
-    setIsOpen(window.innerWidth >= 768);
-  }, 200), []);
-
-  const handleScroll = useCallback(debounce(() => {
-    if (window.innerWidth < 768) {
-      setIsOpen(false);
-    }
-  }, 200), []);
-
   useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleResize, handleScroll]);
+    const handleResize = debounce(() => {
+      setIsOpen(window.innerWidth >= 768);
+    }, 200); // Adjust the delay as needed
   
+    handleResize();
+  
+    window.addEventListener('resize', handleResize);
+  
+    
+  }, []);
   const toggleSidebar = () => { 
     setIsOpen(!isOpen);
   };
