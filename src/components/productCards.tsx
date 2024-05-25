@@ -11,13 +11,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, productName }) => {
     <div className="z-20 bg-gray-50 hover:bg-gray-100 shadow-md overflow-hidden w-[47%] h-48 md:w-96 md:h-96 flex flex-col mt-8 transform transition-transform duration-300 hover:scale-100">
       <div className="overflow-hidden flex justify-center">
         <img
-          className="md:h-80 h-30 w-full object-contain transition-transform duration-300 hover:scale-110"
+          className="md:h-64 h-30 w-full object-contain transition-transform duration-300 hover:scale-110"
           src={imageSrc}
           alt={productName}
           fetchPriority="high" // Add priority property
         />
       </div>
-      <div className="md:p-4 p-0 flex-grow flex flex-col justify-between">
+      <div className="md:p-4 pl-3  flex-grow flex flex-col justify-between">
         <p className="text-lg font-semibold transition-transform duration-300 hover:scale-105">{productName}</p>
         <div className="flex items-center justify-between mt-2 mb-2">
           <p className="text-xs md:text-sm text-gray-600 transition-transform duration-300"><span className="underline cursor-pointer md:text-sm text-xs">Sign in</span>{" "}or Create an account to see the pricing</p>
