@@ -134,7 +134,7 @@ const SocialsAndPayments: React.FC = () => {
             <h2 className="text-xl font-bold text-white uppercase max-md:max-w-full hidden md:block">Follow Us</h2>
             <div className="flex justify-between items-center  md:hidden">
                 <h2 onClick={() => setIsSocialDropdownOpen(!isSocialDropdownOpen)} className="text-xl font-bold text-white uppercase max-md:max-w-full block md:hidden">Follow Us</h2>
-                {isSocialDropdownOpen ? <IoIosArrowUp size={20} /> : <IoIosArrowDown size={20} />}
+                {isSocialDropdownOpen ? <IoIosArrowUp size={20} onClick={() => setIsSocialDropdownOpen(!isSocialDropdownOpen)} /> : <IoIosArrowDown size={20} onClick={() => setIsSocialDropdownOpen(!isSocialDropdownOpen)} />}
             </div>
             <div className="hidden md:block">
                 <SocialIcons />
