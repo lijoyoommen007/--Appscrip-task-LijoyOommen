@@ -1,15 +1,13 @@
 "use client";
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilters, setFilteredProducts } from '../redux/slice';
 import FilterBarHeader from './filterBarHeader'; // Assuming FilterBar is a separate component
 const CustomDropdown = dynamic(() => import('./customFilterSelector'));
-
 import ProductCard from "./productCards";
 import { sortProducts, useMediaQuery } from '@/utils/utils';
-import debounce from 'lodash.debounce';
 import { filterData } from '@/constants';
-import dynamic from 'next/dynamic';
 
 interface Product { 
   id: number;
