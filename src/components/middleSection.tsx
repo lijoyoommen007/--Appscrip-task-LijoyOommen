@@ -167,7 +167,7 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
             </div>
           </div>
           <div className={`flex-1 p-4 transition-width duration-300 ${isOpen ? 'hidden md:block' : 'block'}`}>
-            <div className="mt-4 text-black flex flex-wrap justify-evenly">
+            <div className="md:mt-4 mt-1 text-black flex flex-wrap justify-evenly">
               {/* Render the sorted products */}
               {sortedProducts.map((product) => (
                 <ProductCard key={product.id} imageSrc={product.images[0]}  productName={product.title} />
