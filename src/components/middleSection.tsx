@@ -64,13 +64,17 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
   const sortedProducts = sortProducts(filteredProducts, sortCriteria);
   const isBreakpoint = useMediaQuery(768)
 
+  useEffect(()=>{
+    isBreakpoint == false? setIsOpen(true):setIsOpen(false)
+  },[isBreakpoint])
+
   return (
     <>
       <FilterBarHeader isOpen={isOpen} toggleSidebar={toggleSidebar} />
-        <div className="flex md:pl-16 md:pr-16 pl-4 pr-4">
+        <div className="flex md:pl-16 md:pr-16 ">
           <div
             id="drawer-navigation"
-            className={`transition-width duration-300 h-full overflow-y-auto bg-white ${isOpen||!isBreakpoint ? 'md:w-80 w-[100vw]' : 'w-0'}`}
+            className={`transition-width duration-300 h-full overflow-y-auto bg-white ${isOpen ? 'md:w-80 w-[100vw]' : 'w-0'}`}
             aria-labelledby="drawer-navigation-label"
           >
             <div className="flex justify-between items-center p-4">
