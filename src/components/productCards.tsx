@@ -18,7 +18,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, productName }) => {
         />
       </div>
       <div className="md:p-4 pl-3  flex-grow flex flex-col justify-between">
-        <p className="text-lg font-semibold transition-transform duration-300 hover:scale-105">{productName}</p>
+        <p className="md:text-lg sm:text-base font-semibold transition-transform duration-300 hover:scale-105">{productName}</p>
         <div className="flex items-center justify-between mt-2 mb-2">
           <p className="text-xs md:text-sm text-gray-600 transition-transform duration-300"><span className="underline cursor-pointer md:text-sm text-xs">Sign in</span>{" "}or Create an account to see the pricing</p>
           <GoHeart className="w-6 h-6 text-gray-500 cursor-pointer transition-transform duration-300 hover:text-red-600  hover:scale-110" />
