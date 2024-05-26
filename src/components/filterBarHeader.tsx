@@ -31,7 +31,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ isOpen, toggleSidebar }) => {
                 <p className="font-bold text-lg hidden md:block">3425 ITEMS</p>
                 <div className="text-center">
                     <button
-                        className="text-gray-600  hover:text-gray-800 font-serif ml-5 md:block hidden"
+                        className="text-gray-600  hover:text-gray-800 font-serif ml-14 md:block hidden underline"
                         type="button"
                         onClick={toggleSidebar}
                     >
