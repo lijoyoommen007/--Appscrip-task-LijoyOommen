@@ -14,7 +14,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, productName }) => {
           className="md:h-72 h-56 w-full object-contain transition-transform duration-300 hover:scale-110"
           src={imageSrc}
           alt={productName}
-          fetchPriority="high" // Add priority property
+          loading="lazy"
         />
       </div>
       <div className="md:p-4 pl-3  flex-grow flex flex-col justify-between">
