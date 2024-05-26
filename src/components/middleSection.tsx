@@ -67,8 +67,7 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
   return (
     <>
       <FilterBarHeader isOpen={isOpen} toggleSidebar={toggleSidebar} />
-      <div className="flex">
-        <div className="flex">
+        <div className="flex md:pl-16 md:pr-16 pl-4 pr-4">
           <div
             id="drawer-navigation"
             className={`transition-width duration-300 h-full overflow-y-auto bg-white ${isOpen||!isBreakpoint ? 'md:w-80 w-[100vw]' : 'w-0'}`}
@@ -174,7 +173,6 @@ const FilterLayout: React.FC<FilterLayoutProps> = ({ products }) => {
               ))}
             </div>
           </div>
-        </div>
       </div>
     </>
   );

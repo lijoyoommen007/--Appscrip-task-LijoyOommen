@@ -26,7 +26,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ isOpen, toggleSidebar }) => {
     };
 
     return (
-        <div className="text-black w-full flex md:justify-between justify-evenly items-center p-4 md:pl-16 md:pr-16 border-t-2 border-b-2 sticky top-0 z-40 bg-white">
+        <div className="text-black w-full flex md:justify-between justify-evenly items-center p-4 md:pl-28 md:pr-28 pl-4 pr-4 border-t-2 border-b-2 sticky top-0 z-40 bg-white">
             <div className="flex md:w-max md:justify-start md:items-start justify-center items-center">
                 <h4 className="font-bold text-lg hidden md:block">3425 ITEMS</h4>
                 <div className="text-center">

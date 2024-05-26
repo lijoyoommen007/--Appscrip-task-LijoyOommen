@@ -45,7 +45,7 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <header className=" flex md:border-b-2 border-solid border-neutral-200 sm:border-b-0 flex-col md:items-center md:px-20  md:pb-6 w-full bg-white  max-md:px-5 max-md:max-w-full">
+    <header className=" flex md:border-b-2 border-solid border-neutral-200 sm:border-b-0 flex-col md:items-center md:px-24  md:pb-6 w-full bg-white  max-md:px-5 max-md:max-w-full">
 
       <div className="  border-b-2 border-solid border-neutral-200 md:border-b-0 w-[100%] flex flex-wrap items-center justify-between mx-auto md:p-4 pt-4 pb-5">
         <div className="flex gap-4">

@@ -25,7 +25,7 @@ export default async function Home() {
   return (
 
 
-    <div className="bg-white w-100vw h-100vh">
+    <div className="bg-white w-70% h-100vh ">
       <NavBar />
       <Title />
         <MiddleSection products={products.products} />
